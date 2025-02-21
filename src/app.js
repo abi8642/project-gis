@@ -7,6 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.status(200).send("API Health is ok");
+});
 app.use("/api", placeRoutes);
 
 module.exports = app;
